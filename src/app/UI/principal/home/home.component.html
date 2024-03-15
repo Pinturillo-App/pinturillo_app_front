@@ -4,19 +4,65 @@
   <div class="content flex flex-col items-center ">
 
     <img class="logo my-4" src="../../../../favicon.ico" alt="logo.ico">
+    <h1 class="title">PintuApp</h1>
 
-    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
-      <div class="card flex flex-col items-center">
-        <!-- Avatars -->
-        <div class="circulo flex justify-center"><img class="mt-2" [src]="avatarUrl" alt="avatar.png"></div>
-    
-        <button type="button" class="btn my-2" (click)="changeAvatar()"><img src="../../../../assets/rotate-right-solid.svg" alt="rotate.svg"></button>
-    
-        <input class="nick mt-3" type="text" placeholder="MiNickName123" formControlName="nick">
+    <div class="fila flex">
+
+      <form class="form" [formGroup]="loginForm" (ngSubmit)="submitForm()">
+        
+        <div class="card flex flex-col items-center">
+
+          <div class="inputs flex">
+            <!-- Avatars -->
+            <div class="iz flex flex-col">
+              <div class="circulo flex justify-center"><img [src]="avatarUrl" alt="avatar.png"></div>
+              <button type="button" class="btn my-2" (click)="changeAvatar()"><img src="../../../../assets/rotate-right-solid.svg" alt="rotate.svg"></button>
+            </div>
+            
+            <div class="der flex flex-col text-center">
+              <h1 class="texto">ELIGE UN PERSONAJE Y UN APODO</h1>
+              <input class="nick mt-3" type="text" placeholder="MiNickName123" formControlName="nick">
+            </div>
+
+          </div>
+
+          <button type="submit" class="boton flex"><img src="../../../../assets/play-solid.svg" alt="play.png">CREAR SALA</button>
+
+        </div>
+      
+      </form>
+
+      <div class="howplay flex">
+
+        <h1>CÓMO JUGAR</h1>
+
+        <div class="tarjeta flex" id="tarjeta1">
+          <img src="../../../../assets/tuto_1.png" alt="imagen.png">
+          <h2>1. HABLANDO ES MEJOR</h2>
+          <h4>Invita a tus amigos a una llamada de voz (p. Ej: Discord, Zoom)</h4>
+        </div>
+
+        <div class="tarjeta flex" id="tarjeta2">
+          <img src="../../../../assets/tuto_2.png" alt="imagen.png">
+          <h2>2. HORA DE ADIVINAR</h2>
+          <h4>Alguien estara dibujando y deberas de escribir en el chat lo que es.</h4>
+        </div>
+
+        <div class="tarjeta flex" id="tarjeta3">
+          <img src="../../../../assets/tuto_3.png" alt="imagen.png">
+          <h2>3. HORA DE DIBUJAR</h2>
+          <h4>Vas dibujar la palabra que te alla salido.</h4>
+        </div>
+
+        <div class="botones flex">
+          <button id="boton1" (click)="changeTarjeta('tarjeta1', 'boton1')"></button>
+          <button id="boton2" (click)="changeTarjeta('tarjeta2', 'boton2')"></button>
+          <button id="boton3" (click)="changeTarjeta('tarjeta3', 'boton3')"></button>
+        </div>
+
       </div>
-    
-      <button type="submit" class="boton flex"><img src="../../../../assets/play-solid.svg" alt="play.png">CREAR SALA</button>
-    </form>
+
+    </div>
 
   </div>
 
