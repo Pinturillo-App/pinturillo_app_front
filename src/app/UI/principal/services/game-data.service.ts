@@ -14,19 +14,19 @@ export class GameDataService {
   private answers   = new BehaviorSubject<Answer[]  | null>( null );
 
 
-  getDataUsers(): Observable<User[] | null> {
+  public getDataUsers(): Observable<User[] | null> {
     return this.dataUsers.asObservable();
   }
 
-  setDataUsers(data: User[]): void {
+  public setDataUsers(data: User[]): void {
     this.dataUsers.next(data);
   }
 
-  getAnswers(): Observable<Answer[] | null> {
+  public getAnswers(): Observable<Answer[] | null> {
     return this.answers.asObservable();
   }
 
-  setAnswers(data: Answer[]): void {
+  public setAnswers(data: Answer[]): void {
     this.answers.next(data);
   }
 }

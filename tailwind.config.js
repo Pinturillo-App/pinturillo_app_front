@@ -11,6 +11,9 @@ module.exports = {
         'main-yellow'   : '#CEE879',
         'main-orange'   : '#FCB653',
         'main-red'      : '#FF5254'
+      },
+      backgroundImage: {
+        'principal-image': "url('/src/assets/images/background.webp')",
       }
     },
   },
