@@ -1,12 +1,12 @@
 
 <div class="container
-            bg-main-blue h-screen w-100">
+             h-screen w-100 lg:flex lg:p-10 lg:flex-row-reverse">
     
     <app-game-board></app-game-board>
 
-    <div class="menu w-100  flex flex-row ">
-        <app-game-users></app-game-users>
-        <app-game-chat></app-game-chat>
+    <div class="menu w-full h-1/3 lg:w-1/3 lg:h-full flex flex-row lg:flex-col lg:relative">
+        <app-game-users class="w-1/3 lg:w-full lg:h-full"></app-game-users>
+        <app-game-chat  class="w-2/3 lg:h-1/3 lg:absolute lg:bottom-0 lg:left-full lg:ml-5"></app-game-chat>
     </div>
     
 </div>
