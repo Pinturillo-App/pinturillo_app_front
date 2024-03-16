@@ -28,9 +28,4 @@ export class GameUsersComponent {
       console.log( this.users )
     })
   }
-
-
-  setPoints(): number {
-    return Math.floor(Math.random() * 11) * 10;
-  }
 }
