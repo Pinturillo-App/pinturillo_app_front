@@ -10,3 +10,8 @@ canvas{
 .letra{
     border-bottom: 1px solid black;
 }
+
+
+.time{
+    transition: width 2s ease; /* Transición suave de la anchura */
+}

@@ -44,7 +44,6 @@ export class GameBoardComponent implements AfterViewInit {
   private cx!: CanvasRenderingContext2D | null;  
   
   constructor( private router: Router) {
-    
   }
 
   ngOnInit(): void {
