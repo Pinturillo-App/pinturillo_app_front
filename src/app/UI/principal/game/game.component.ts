@@ -1,3 +1,4 @@
+
 import { Component, Inject } from '@angular/core';
 import { GameBoardComponent } from '../components/game-board/game-board.component';
 import { GameChatComponent } from '../components/game-chat/game-chat.component';
@@ -88,10 +89,11 @@ const users_game: User[] = [
 ]
 
 
+
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [ GameBoardComponent, GameChatComponent, GameUsersComponent ],
+  imports: [GameBoardComponent, GameUsersComponent, GameChatComponent ],
   templateUrl: './game.component.html',
   styleUrl: './game.component.css'
 })

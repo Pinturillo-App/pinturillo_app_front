@@ -10,5 +10,6 @@ export const routes: Routes = [
     { path: "rooms"         , component : RoomsComponent            },
     { path: "create-rooms"  , component : CreateRoomsComponent      },
     { path: "game/:id"      , component : GameComponent             },
-    { path: "**"              , redirectTo: "home", pathMatch: "full" },
+    { path: "**"            , redirectTo: "home"                    },
+
 ];
