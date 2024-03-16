@@ -1,15 +1,16 @@
 <div class="background bg-blue-600 flex justify-center items-center">
   <div class="flex-col justify-center items-center w-5/6 h-5/6 lg:w-5/6">
     <div class="flex justify-center items-center h-16 lg:hidden">
-      <div class="w-1/2 bg-white h-16 flex justify-center items-center text-center rounded-tl-2xl">
-        Pública
+      <div class="w-1/2 bg-main-orange h-16 flex justify-center items-center text-center rounded-tl-2xl">
       </div>
-      <div class="w-1/2 bg-white h-16 flex justify-center items-center text-center rounded-tr-2xl">
-        Privada
+      <div class="w-1/2 bg-main-yellow h-16 flex justify-center items-center text-center rounded-tr-2xl">
       </div>
     </div>
     <div class="content bg-white flex justify-center items-center h-5/6 rounded-b-2xl lg:h-full lg:w-full lg:rounded-2xl">
-      <div class="flex flex-wrap justify-center items-center w-4/5 h-4/5">
+      <div class="flex flex-wrap bg-main-green justify-center items-center w-full h-full rounded-b-2xl border-0 lg:w-2/6 lg:h-full lg:rounded-none lg:rounded-l-2xl">
+        <app-rooms></app-rooms>
+      </div>
+      <div class="flex-wrap bg-main-yellow justify-center items-center w-4/5 h-4/5 hidden border-0 lg:block lg:w-/6 lg:h-full lg:rounded-r-2xl">
         <app-rooms></app-rooms>
       </div>
     </div>
