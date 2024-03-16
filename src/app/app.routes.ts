@@ -5,9 +5,9 @@ import { CreateRoomsComponent } from './UI/principal/create-rooms/create-rooms.c
 import { GameComponent } from './UI/principal/game/game.component';
 
 export const routes: Routes = [
-    { path: "**"            , redirectTo: "home", pathMatch: "full" },
     { path: "home"          , component : HomeComponent             },
     { path: "rooms"         , component : RoomsComponent            },
     { path: "create-rooms"  , component : CreateRoomsComponent      },
     { path: "game/:id"      , component : GameComponent             },
+    { path: "**"            , redirectTo: "home"                    },
 ];
