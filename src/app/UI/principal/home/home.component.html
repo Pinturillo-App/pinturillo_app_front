@@ -1,3 +1,23 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+<div class="contenedor flex justify-center bg-gradient-to-b from-purple-900 to-pink-500">
+  <!-- bg-gradient-to-b from-red-500 to-yellow-400 -->
+
+  <div class="content flex flex-col items-center ">
+
+    <img class="logo my-4" src="../../../../favicon.ico" alt="logo.ico">
+
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+      <div class="card flex flex-col items-center">
+        <!-- Avatars -->
+        <div class="circulo flex justify-center"><img class="mt-2" [src]="avatarUrl" alt="avatar.png"></div>
+
+        <button type="button" class="btn my-2" (click)="changeAvatar()"><img src="../../../../assets/svg/rotate-right-solid.svg" alt="rotate.svg"></button>
+
+        <input class="nick mt-3" type="text" placeholder="MiNickName123" formControlName="nick">
+      </div>
+
+      <button type="submit" class="boton flex"><img src="../../../../assets/svg/play-solid.svg" alt="play.png">CREAR SALA</button>
+    </form>
+
+  </div>
+
+</div>
