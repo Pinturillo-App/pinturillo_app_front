@@ -17,15 +17,16 @@ export class GameUsersComponent {
   constructor( private gameServ: GameDataService ){}
 
   ngOnInit(): void {
+
     this.callUsers();
+    
   }
 
 
   callUsers(){
 
     this.gameServ.getDataUsers().subscribe( (data: any) => {
-      this.users = data;
-      console.log( this.users )
+      this.users = data.sort((a: { points: number; }, b: { points: number; }) => b.points - a.points);
     })
   }
 }

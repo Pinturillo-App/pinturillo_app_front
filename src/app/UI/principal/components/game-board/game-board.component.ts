@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import {
   Component,
   ViewChild,
@@ -6,13 +7,26 @@ import {
   Input,
   HostListener
 } from "@angular/core";
+import { Router } from "@angular/router";
 import { fromEvent } from "rxjs";
 import { concatMap, pairwise, switchMap, takeUntil } from "rxjs/operators";
+
+
+const palabras = [
+  "perro",
+  "gato",
+  "bicicleta",
+  "bailarina",
+  "esternocleidomastoideo",
+  "rapido",
+  "comprar"
+]
+
 
 @Component({
   selector: 'app-game-board',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './game-board.component.html',
   styleUrls: ['./game-board.component.css']
 })
@@ -23,14 +37,26 @@ export class GameBoardComponent implements AfterViewInit {
   @Input() public width = 400;
   @Input() public height = 400;
 
+  tiempo: number = 0;
+  intervalo: any;
+
   canvasEl !: HTMLCanvasElement;
   private cx!: CanvasRenderingContext2D | null;  
   
+  constructor( private router: Router) {
+    
+  }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+
+    this.iniciarCronometro();
+  }
+
   public ngAfterViewInit() {
     // get the context
     this.canvasEl = this.canvas.nativeElement;
-    
-
     this.cx = this.canvasEl.getContext('2d');
 
     this.updateDimensions();
@@ -107,6 +133,37 @@ export class GameBoardComponent implements AfterViewInit {
       // strokes the current path with the styles we set earlier
       this.cx.stroke();
     }
+  }
+
+  cambiarColor( color: string){
+    if( !this.cx ) return 
+    this.cx.strokeStyle = color;
+  }
+
+  borrar(){
+    if( !this.cx ) return 
+    this.cx.clearRect(0, 0, this.width, this.height);
+  } 
+
+
+  palabraJugar(){
+    // console.log( palabras[3].split(''))
+    return palabras[ 5 ]  
+  }
+
+
+  iniciarCronometro(): void {
+    this.intervalo = setInterval(() => {
+      if (this.tiempo < 30) {
+        this.tiempo++;
+      } else {
+        clearInterval(this.intervalo);
+      }
+    }, 1000);
+  }
+
+  getBack(){
+    this.router.navigate(['home']);
   }
 
 
