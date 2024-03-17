@@ -6,8 +6,8 @@ import { RoomsLayoutComponent } from './UI/layouts/rooms-layout/rooms-layout.com
 
 export const routes: Routes = [
     { path: "**"            , redirectTo: "rooms", pathMatch: "full" },
-    { path: "home"          , component : HomeComponent             },
-    { path: "rooms"         , component : RoomsLayoutComponent            },
-    { path: "create-rooms"  , component : CreateRoomsComponent      },
-    { path: "game/:id"      , component : GameComponent             },
+    { path: "home"          , component : HomeComponent              },
+    { path: "rooms"         , component : RoomsLayoutComponent       },
+    { path: "create-rooms"  , component : CreateRoomsComponent       },
+    { path: "game/:id"      , component : GameComponent              },
 ];
