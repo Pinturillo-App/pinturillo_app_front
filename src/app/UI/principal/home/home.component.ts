@@ -62,7 +62,7 @@ export class HomeComponent {
       const boton = document.getElementById(botonId);
 
       if (boton) {
-        boton.style.backgroundColor = '#6e06f3';
+        boton.style.backgroundColor = '#0c8afc';
       }
 
       this.tarjetaActivaId = id;
