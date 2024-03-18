@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-private-rooms',
@@ -7,12 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './private-rooms.component.html',
   styleUrl: './private-rooms.component.css'
 })
-export class PrivateRoomsComponent {
-  public avatarUrl: string = `../../../../../assets/Avatars/Avatar_0.png`;
+export class PrivateRoomsComponent implements OnInit{
+  public avatarUrl: string = ``;
 
-  changeAvatar(): void {
-    const randomIndex = Math.floor(Math.random() * 26);
+  constructor() {}
 
-    this.avatarUrl = `../../../../assets/Avatars/Avatar_${randomIndex}.png`;
+
+  ngOnInit(): void {
+    this.avatarUrl = sessionStorage.getItem('avatar') || '';
   }
+
 }
