@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './private-rooms.component.css'
 })
 export class PrivateRoomsComponent {
+  public avatarUrl: string = `../../../../../assets/Avatars/Avatar_0.png`;
 
+  changeAvatar(): void {
+    const randomIndex = Math.floor(Math.random() * 26);
+
+    this.avatarUrl = `../../../../assets/Avatars/Avatar_${randomIndex}.png`;
+  }
 }

@@ -40,32 +40,31 @@ export class HomeComponent {
   }
 
   changeAvatar(): void {
-    const randomIndex = Math.floor(Math.random() * 19);
+    const randomIndex = Math.floor(Math.random() * 26);
     this.avatarUrl = `../../../../assets/Avatars/Avatar_${randomIndex}.png`;
   }
 
   changeTarjeta(id: string, botonId: string) {
-    // Restablecer el color de todos los botones a blanco
     document.querySelectorAll('.botones button').forEach((btn: Element) => {
       (btn as HTMLElement).style.backgroundColor = '#ffffff';
     });
 
-    // Ocultar la tarjeta activa actualmente
     const tarjetaActivaElement = document.getElementById(this.tarjetaActivaId);
+
     if (tarjetaActivaElement) {
       tarjetaActivaElement.style.display = 'none';
     }
 
-    // Mostrar la tarjeta correspondiente al botón y cambiar su color
     const element = document.getElementById(id);
+
     if (element) {
       element.style.display = 'flex';
       const boton = document.getElementById(botonId);
+
       if (boton) {
-        boton.style.backgroundColor = '#6e06f3';
+        boton.style.backgroundColor = '#0c8afc';
       }
 
-      // Actualizar el id de la tarjeta activa
       this.tarjetaActivaId = id;
     }
   }
