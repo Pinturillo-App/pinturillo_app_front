@@ -34,8 +34,12 @@ export class HomeComponent {
   
     const selectedAvatarUrl = this.avatarUrl ? this.avatarUrl : '../../../../assets/Avatars/Avatar_0.png';
     this.loginForm.value['avatar'] = selectedAvatarUrl;
+
+    sessionStorage.setItem('nick', this.loginForm.value['nick']);
+    sessionStorage.setItem('avatar', selectedAvatarUrl);
   
     console.log(this.loginForm.value);
+
     this.router.navigate(['rooms']);
   }
 
