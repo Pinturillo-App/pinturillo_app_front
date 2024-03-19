@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   
-  public loginForm : FormGroup = new FormGroup({});
-  public avatarUrl: string | undefined;
-  tarjetaActivaId: string = 'tarjeta1';
+  public loginForm      : FormGroup = new FormGroup({});
+  public avatarUrl      : string | undefined;
+  public tarjetaActivaId: string = 'tarjeta1';
 
   constructor(
     private _fb    : FormBuilder,

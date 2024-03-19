@@ -111,11 +111,11 @@
     display: none;
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 720px) {
 
     .content{
         width: 80%;
-        height: 50vw;
+        height: 90%;
         margin: auto;
         border-radius: 14px;
         background-color: #0c8afc;
@@ -139,6 +139,7 @@
 
     .fila{
         width: 92%;
+        height: 100%;
     }
 
     .form{
@@ -147,16 +148,16 @@
 
     .card{
         width: 100%;
-        height: 28vw;
+        height: 100%;
         margin: 0 20px 0 20px;
         background-color: white;
     }
 
     .inputs{
         width: 100%;
-        height: 22vw;
         flex-direction: row;
         margin-top: 20px;
+        margin-bottom: 10px;
     }
 
     .iz{
@@ -174,19 +175,19 @@
     }
 
     .circulo{
-        width: 140px;
-        height: 140px;
+        width: 100%;
+        height: 65%;
         border: 6px solid theme('colors.main-orange');
     }
 
     .circulo img{
-        width: 140px;
-        height: 150px;
-        margin-top: -24px;
+        width: 100%;
+        height: auto;
+        margin-top: -20px;
     }
 
     .texto{
-        width: 220px;
+        width: 80%;
         font-weight: bold;
         font-size: 18px;
         color: theme('colors.main-orange');
@@ -219,7 +220,7 @@
 
     .howplay{
         width: 40%;
-        height: 28vw;
+        height: 100%;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -263,15 +264,15 @@
         color: white;
         font-size: 16px;
         letter-spacing: 0.5px;
+        margin-bottom: 20px;
     }
 
     .howplay .botones{
-        width: 80%;
+        width: 100%;
         display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: center;
-        margin-top: 30px;
+        margin: auto;
     }
 
     .howplay .botones button{
