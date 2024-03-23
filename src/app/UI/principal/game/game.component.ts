@@ -5,6 +5,8 @@ import { GameChatComponent } from '../components/game-chat/game-chat.component';
 import { GameUsersComponent } from '../components/game-users/game-users.component';
 import { User } from '../../../domain/model/users/user';
 import { GameDataService } from '../services/game-data.service';
+import { CommonModule } from '@angular/common';
+import { Observable, map } from 'rxjs';
 
 
 const users_game: User[] = [
@@ -93,16 +95,43 @@ const users_game: User[] = [
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [GameBoardComponent, GameUsersComponent, GameChatComponent ],
+  imports: [GameBoardComponent, GameUsersComponent, GameChatComponent, CommonModule ],
   templateUrl: './game.component.html',
   styleUrl: './game.component.css'
 })
 export class GameComponent {
+
+  showRanking: boolean = true;
+
+  usersRanking: User[]= [];
 
   constructor(private gameServ:GameDataService ){}
 
   ngOnInit(): void {
     
     this.gameServ.setDataUsers( users_game );
+    
+    this.getRanking().subscribe( data =>{
+      this.usersRanking = data;
+      console.log( this.usersRanking );
+    })
   }
+
+  mostrarModal( value: boolean ) {
+    this.showRanking = value;
+  }
+
+
+  
+  getRanking(): Observable<User[]> {
+    return this.gameServ.getDataUsers().pipe(
+
+      map( (data:any) => {
+        
+        data.sort((a:any, b:any) => b.points - a.points);
+        
+        return data.slice(0, 3);
+      }))
+    }
+
 }
